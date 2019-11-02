@@ -40,40 +40,32 @@ export default class MyDocument extends Document {
             content="/static/kosmo/assets/img/icon-150.png"
           />
           <meta name="theme-color" content="#fff" /> */}
-
+          <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" />
           <link
-            href="/static/material/assets/css/material-kit.min.css"
+            href="/static/assets/css/material-dashboard.css"
             rel="stylesheet"
           />
           <link
-            href="/static/material/assets/css/custom.css"
+            href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
             rel="stylesheet"
           />
           <link
             rel="stylesheet"
             type="text/css"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
-          />
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
           />
         </Head>
         <body className="">
           <div id="mobile-overlay" className="ks-mobile-overlay" />
           <Main {...rootProps} />
           <NextScript />
-          <script src="/static/material/assets/js/core/jquery.min.js" />
-          <script src="/static/material/assets/js/core/popper.min.js" />
-          <script src="/static/material/assets/js/core/bootstrap-material-design.min.js" />
-          <script src="/static/material/assets/js/plugins/moment.min.js" />
-          <script src="/static/material/assets/js/plugins/bootstrap-datetimepicker.js" />
-          <script src="/static/material/assets/js/plugins/nouislider.min.js" />
-          <script src="/static/material/assets/js/plugins/bootstrap-tagsinput.js" />
-          <script src="/static/material/assets/js/plugins/bootstrap-selectpicker.js" />
-          <script src="/static/material/assets/js/plugins/jasny-bootstrap.min.js" />
-          <script async defer src="https://buttons.github.io/buttons.js" />
-          <script src="/static/material/assets/js/material-kit.js?v=2.1.1" />
+
+          <script src="/static/assets/js/jquery-3.1.1.min.js" />
+          <script src="/static/assets/js/jquery-ui.min.js" />
+          <script src="/static/assets/js/bootstrap.min.js" />
+          <script src="/static/assets/js/material.min.js" />
+          <script src="/static/assets/js/perfect-scrollbar.jquery.min.js" />
+          <script src="/static/assets/js/material-dashboard.js" />
         </body>
       </html>
     );
