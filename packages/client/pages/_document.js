@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
             content="width=device-width, initial-scale=1.0"
           />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="apple-mobile-web-app-title" content="YoungRadio" />
+          <meta name="apple-mobile-web-app-title" content="React-Voting" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="#466bde"

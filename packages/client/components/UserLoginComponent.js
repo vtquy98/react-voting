@@ -38,7 +38,7 @@ const UserLoginComponent = ({
         <div className="row">
           <div className="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
             <form className="form" method="" action="">
-              <div className="card card-login card-hidden">
+              <div className="card card-login">
                 <div className="card-header card-header-primary text-center">
                   <h4 className="card-title">Login</h4>
                   <div className="social-line">

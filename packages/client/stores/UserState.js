@@ -103,7 +103,7 @@ export const userLogin = (username, password) => {
         return;
       }
       saveToken(resp.data.login_user.token);
-      Router.push('/');
+      Router.push('/user-dashboard');
       return;
     }
   );
