@@ -1,7 +1,33 @@
 import React from 'react';
+import ReactTable from 'react-table';
+import Popup from 'reactjs-popup';
+
+const COLUMNS = [
+  {
+    accessor: 'fullName',
+    Header: 'Name'
+  },
+  {
+    accessor: 'email',
+    Header: 'Participant'
+  },
+  {
+    accessor: 'dateCreate',
+    Header: 'Created'
+  },
+  {
+    accessor: 'status',
+    Header: 'Update at'
+  }
+];
 
 const UserDashboardComponent = () => (
   <React.Fragment>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/static/customs/react-table.css"
+    />
     <div className="content">
       <div className="container-fluid">
         <div className="row">
@@ -15,12 +41,119 @@ const UserDashboardComponent = () => (
               </div>
               <div className="card-content">
                 <h4 className="card-title">Your voting </h4>
-                <div className="row">
-                  <div className="col-md-5">Bla bla</div>
-                  <div className="col-md-6 col-md-offset-1">
-                    <div id="worldMap" className="map"></div>
+                <div className="d-flex justify-content-between">
+                  <div className="col-lg-2">
+                    {/* <Popup
+                      trigger={
+                        <button className="btn btn-success btn-round">
+                          <span className="btn-label">
+                            <i className="material-icons">add</i>
+                          </span>
+                          Create new voting
+                          <div className="ripple-container"></div>
+                        </button>
+                      }
+                      position="right center"
+                    >
+                      <div>Popup content here !!</div>
+                    </Popup> */}
+
+                    <Popup
+                      trigger={
+                        <a
+                          href="#pablo"
+                          className="btn btn-success btn-just-icon btn-fill btn-round ml-2"
+                        >
+                          <i className="material-icons">add</i>
+                        </a>
+                      }
+                      modal
+                    >
+                      {close => (
+                        <div>
+                          <div className="modal-body">
+                            <div class="form-group">
+                              <div className="card-title">
+                                <h3>Create new voting</h3>
+                              </div>
+                              <input
+                                id="input-field"
+                                type="text"
+                                className="form-control"
+                                placeholder="Name of the voting"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="text-center">
+                            <button
+                              type="button"
+                              className="btn btn-success btn-link"
+                              // onClick={actionDelete}
+                            >
+                              Create voting
+                            </button>
+                            <button
+                              type="button"
+                              className="btn btn-outline btn-link"
+                              onClick={() => close()}
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </Popup>
+                  </div>
+                  <div
+                    className="col-md-6 col-md-offset-4
+"
+                  >
+                    <div className="input-group">
+                      <span className="input-group-addon">
+                        <i className="material-icons">search</i>
+                      </span>
+                      <div className="form-group label-floating is-empty">
+                        <label className="control-label">Type to search</label>
+                        <input
+                          name="email"
+                          type="email"
+                          className="form-control"
+                        />
+                        <span className="material-input"></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                <ReactTable
+                  data={[]}
+                  manual // Forces table not to paginate or sort automatically, so we can handle it server-side
+                  // pages={Math.ceil(
+                  //   totalCount / (pageSize || PAGE_SIZE_DEFAULT)
+                  // )} // Display the total number of pages
+                  // onFetchData={e => this.fetchData(e, { dispatchAction })}
+                  defaultPageSize={5}
+                  // page={page || PAGE_DEFAULT}
+                  // pageSize={pageSize || PAGE_SIZE_DEFAULT}
+                  className="-striped -highlight"
+                  columns={COLUMNS}
+                  // previousText={
+                  //   <div className="custom-button-footer">
+                  //     {t('table.previous_text')}
+                  //   </div>
+                  // }
+                  // nextText={
+                  //   <div className="custom-button-footer">
+                  //     {t('table.next_text')}
+                  //   </div>
+                  // }
+                  // noDataText={t('table.no_rows_text')}
+                  // pageText={t('table.page_text')}
+                  // rowsText={t('table.rows_text')}
+                  // loadingText={t('table.loading_text')}
+                  // ofText={t('table.of_text')}
+                />
               </div>
             </div>
           </div>

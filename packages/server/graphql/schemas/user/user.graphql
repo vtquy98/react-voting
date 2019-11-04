@@ -9,7 +9,6 @@ type User {
   gender: Gender!
   email: String!
   birthDate: String!
-  quote: String!
   createdAt: DateTime!
   updatedAt: DateTime!
   status: UserStatus!

@@ -21,18 +21,10 @@ app.use(cors());
 app.use(
   bodyParser.json({
     type: 'application/json',
-    extended: true,
-    parameterLimit: 100000,
-    limit: '10mb'
+    extended: true
   })
 );
-// app.use(
-//   bodyParser.urlencoded({
-//     parameterLimit: 100000,
-//     limit: '50mb',
-//     extended: true
-//   })
-// );
+
 app.use(logger('dev'));
 app.use(session());
 // app.use(expressJWT());

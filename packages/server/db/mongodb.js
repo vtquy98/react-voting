@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { MONGO_URL, MONGO_DB, NODE_ENV, MONGO_OPTIONS } = process.env;
 
 const mongoUrl = MONGO_URL || 'mongodb://localhost:27017';
-const dbName = MONGO_DB || 'YoungRadio';
+const dbName = MONGO_DB || 'ReactVoting';
 
 const options = MONGO_OPTIONS
   ? JSON.parse(MONGO_OPTIONS)

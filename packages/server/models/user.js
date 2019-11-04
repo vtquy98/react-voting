@@ -3,7 +3,7 @@ import uuid from 'uuid';
 import { updateDocBuilder } from './utils';
 import bcrypt from 'bcryptjs';
 import { USER_PENDING } from '../enums/userStatus';
-import { AUTHOR } from '../enums/userRole';
+import { ADMIN } from '../enums/userRole';
 
 const UserSchema = Schema({
   _id: {
@@ -22,7 +22,6 @@ const UserSchema = Schema({
   gender: Number,
   email: { type: String, required: true },
   birth_date: String,
-  quote: String,
   status: {
     type: Number,
     default: USER_PENDING,
@@ -30,7 +29,7 @@ const UserSchema = Schema({
   },
   role: {
     type: Number,
-    default: AUTHOR,
+    default: ADMIN,
     required: true
   },
   created_at: {

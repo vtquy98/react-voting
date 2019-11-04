@@ -60,12 +60,23 @@ export default class MyDocument extends Document {
           <Main {...rootProps} />
           <NextScript />
 
+          {/* <script src="/static/assets/js/jquery-3.1.1.min.js" />
+          <script src="/static/assets/js/jquery-ui.min.js" />
+          <script src="/static/assets/js/bootstrap.min.js" />
+          <script src="/static/assets/js/material.min.js" />
+          <script src="/static/assets/js/perfect-scrollbar.jquery.min.js" /> */}
           <script src="/static/assets/js/jquery-3.1.1.min.js" />
           <script src="/static/assets/js/jquery-ui.min.js" />
           <script src="/static/assets/js/bootstrap.min.js" />
           <script src="/static/assets/js/material.min.js" />
           <script src="/static/assets/js/perfect-scrollbar.jquery.min.js" />
           <script src="/static/assets/js/material-dashboard.js" />
+          <script src="/static/assets/js/jquery.bootstrap-wizard.js" />
+          <script src="/static/assets/js/bootstrap-tagsinput.js" />
+
+          {/* <script type="text/javascript">
+            $().ready(function() {demo.initMaterialWizard()})
+          </script> */}
         </body>
       </html>
     );

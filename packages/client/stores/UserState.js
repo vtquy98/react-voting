@@ -21,7 +21,6 @@ const GetAuthorByIdAPI = makeFetchAction(
       get_author_by_id(authorId: $authorId) {
         fullName
         profession
-        quote
         avatar
         id
       }
@@ -58,7 +57,6 @@ const GetTypycalUsersAPI = makeFetchAction(
       get_three_authors_typical {
         fullName
         profession
-        quote
         avatar
         id
       }
@@ -132,7 +130,6 @@ const GetCurrentUserAPI = makeFetchAction(
         avatar
         role
         profession
-        quote
       }
     }
   `
