@@ -9,13 +9,12 @@ const RenderInputFieldComponent = ({
   meta: { touched, error },
   ...others
 }) => (
-  <div className="form-group bmd-form-group">
-    <div className="input-group">
-      <div className="input-group-prepend">
-        <span className="input-group-text">
-          <i className="material-icons">{icon}</i>
-        </span>
-      </div>
+  <div className="input-group">
+    <span className="input-group-addon">
+      <i className="material-icons">{icon}</i>
+    </span>
+    <div className="form-group label-floating is-empty">
+      <label className="control-label">{label}</label>
       <input
         {...input}
         type={type}
@@ -23,9 +22,10 @@ const RenderInputFieldComponent = ({
         className="form-control"
         {...others}
       />
-    </div>
-    <div className="text-danger text-center">
-      {touched && (error && <span style={{ color: 'red' }}>{error}</span>)}
+      <span className="material-input"></span>
+      <div className="text-danger text-center">
+        {touched && (error && <span style={{ color: 'red' }}>{error}</span>)}
+      </div>
     </div>
   </div>
 );
