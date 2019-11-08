@@ -2,6 +2,28 @@ import React from 'react';
 import ReactTable from 'react-table';
 import Popup from 'reactjs-popup';
 
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { compose, withState } from 'recompose';
+
+import { createVoting, createVotingDataSelector } from '../stores/VotingState';
+
+const withVotingName = withState('votingName', 'setVotingName', '');
+
+const connectToRedux = connect(
+  createStructuredSelector({
+    successMessage: createVotingDataSelector
+  }),
+  dispatch => ({
+    CreateVoting: votingName => votingName && dispatch(createVoting(votingName))
+  })
+);
+
+const enhance = compose(
+  withVotingName,
+  connectToRedux
+);
+
 const COLUMNS = [
   {
     accessor: 'fullName',
@@ -21,7 +43,11 @@ const COLUMNS = [
   }
 ];
 
-const UserDashboardComponent = () => (
+const UserDashboardComponent = ({
+  setVotingName,
+  CreateVoting,
+  votingName
+}) => (
   <React.Fragment>
     <link
       rel="stylesheet"
@@ -43,21 +69,6 @@ const UserDashboardComponent = () => (
                 <h4 className="card-title">Your voting </h4>
                 <div className="d-flex justify-content-between">
                   <div className="col-lg-2">
-                    {/* <Popup
-                      trigger={
-                        <button className="btn btn-success btn-round">
-                          <span className="btn-label">
-                            <i className="material-icons">add</i>
-                          </span>
-                          Create new voting
-                          <div className="ripple-container"></div>
-                        </button>
-                      }
-                      position="right center"
-                    >
-                      <div>Popup content here !!</div>
-                    </Popup> */}
-
                     <Popup
                       trigger={
                         <a
@@ -81,6 +92,9 @@ const UserDashboardComponent = () => (
                                 type="text"
                                 className="form-control"
                                 placeholder="Name of the voting"
+                                onChange={e =>
+                                  setVotingName(e.currentTarget.value)
+                                }
                               />
                             </div>
                           </div>
@@ -89,7 +103,10 @@ const UserDashboardComponent = () => (
                             <button
                               type="button"
                               className="btn btn-success btn-link"
-                              // onClick={actionDelete}
+                              onClick={e => {
+                                e.preventDefault();
+                                CreateVoting(votingName);
+                              }}
                             >
                               Create voting
                             </button>
@@ -163,4 +180,4 @@ const UserDashboardComponent = () => (
   </React.Fragment>
 );
 
-export default UserDashboardComponent;
+export default enhance(UserDashboardComponent);

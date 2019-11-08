@@ -3,10 +3,19 @@ import NormalLayout from '../layouts/NormalLayout';
 import AuthenHOC from '../components/HOC/AuthenHOC';
 import CreateVotingComponent from '../components/CreateVotingComponent';
 
-const CreateVotingPage = rootProps => (
+const CreateVotingPage = ({ votingId, ...rootProps }) => (
   <NormalLayout {...rootProps} title="not config">
-    <CreateVotingComponent />
+    <CreateVotingComponent votingId={votingId} />
   </NormalLayout>
 );
+
+CreateVotingPage.getInitialProps = ctx => {
+  const {
+    query: { id }
+  } = ctx;
+  return {
+    votingId: { id }
+  };
+};
 
 export default AuthenHOC(CreateVotingPage);

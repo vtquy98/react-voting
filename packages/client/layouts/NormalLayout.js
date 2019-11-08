@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 class NormalLayout extends React.Component {
   render() {
@@ -10,9 +11,9 @@ class NormalLayout extends React.Component {
             <button className="btn btn-round btn-white btn-just-icon">
               <i className="material-icons">keyboard_arrow_left</i>
             </button>
-            <a className="back-btn" href="wizard.html#">
-              Back to the previous page
-            </a>
+            <Link href="/user-dashboard">
+              <a className="back-btn">Back to the previous page</a>
+            </Link>
           </div>
         </nav>
         {children}

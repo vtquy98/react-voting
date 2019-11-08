@@ -38,7 +38,7 @@ const VotingTimeForm = props => {
             <div className="card-content">
               <h4 className="card-title">What time can the voting start?</h4>
               <Field
-                name="votingDateTime"
+                name="votingDatetime"
                 component={RenderDateTimeFieldComponent}
               />
             </div>

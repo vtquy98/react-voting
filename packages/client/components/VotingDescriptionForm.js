@@ -35,7 +35,7 @@ const VotingDescriptionForm = props => {
         <div className="col-sm-6">
           <h6>Voting's description</h6>
           <Field
-            name="votingDescription"
+            name="description"
             type="text"
             component={RenderTextAreaFieldComponent}
             rows="7"
